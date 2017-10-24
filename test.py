@@ -5,3 +5,6 @@ connexion_avec_serveur.connect(('78.223.16.25', 55556))
 
 #connexion_avec_serveur.send(b"coucou")
 #connexion_avec_serveur.recv(1024)
+
+
+SAAAAAALLLLLLUT
