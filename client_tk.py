@@ -12,6 +12,8 @@ connexion_avec_serveur.settimeout(0)
 
 #============ fenetre tkinter =============#
 
+NB_LIGNE = 10
+
 class Interface(Frame):
     
   """Notre fenêtre principale. Tous les widgets sont stockés comme attributs de cette fenêtre."""
@@ -25,8 +27,8 @@ class Interface(Frame):
     self.messageTop = Label(self, text="Messagerie rudimentaire")
     self.messageTop.pack()
 
-    self.champ_label = [""]*10
-    for i in range(10):
+    self.champ_label = [""]*NB_LIGNE
+    for i in range(NB_LIGNE):
       self.champ_label[i] = Label(fenetre, text="")
       self.champ_label[i]["text"] = ""
       self.champ_label[i].pack()
@@ -65,9 +67,9 @@ class Interface(Frame):
       if champ["text"] == "":
         champ["text"] = message
         return
-    for i in range(0,9):
+    for i in range(0,NB_LIGNE - 1):
       self.champ_label[i]["text"] = self.champ_label[i+1]["text"]
-    self.champ_label[9]["text"] = message
+    self.champ_label[NB_LIGNE - 1]["text"] = message
 
   def end(self):
     interface.destroy()
