@@ -18,7 +18,9 @@ s.settimeout(0.0)
 
 clients = []
 
-while time()-t<5.0:
+t = time()
+
+while time()-t<20.0:
 
     try:
         co,inf = s.accept()
@@ -29,18 +31,25 @@ while time()-t<5.0:
         pass
         
 
-
-msg = b""
-
-for client in clients:
-    try:
-        msg = client[0].recv(1024)
-        print(msg.decode())
-        i = client[2]
-
+def receive():
+    t = time()
+    
+    while time()-t < 600.0:
         for client in clients:
-            if client[2] != i:
-                client[0].send(b"\n"+msg)
-            
-    except socket.error:
-        sleep(0.1)
+            try:
+                msg = client[0].recv(2048)
+                print(msg.decode())
+                if msg.decode() == "fin":
+                    return
+                i = client[2]
+
+                for client in clients:
+                    if client[2] != i:
+                        client[0].send(b"\n"+msg)
+                    
+            except socket.error:
+                sleep(0.1)
+
+receive()
+
+s.close()
