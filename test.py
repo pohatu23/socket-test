@@ -12,7 +12,7 @@ SAAAAAALLLLLLUT
 COucou
 
 class Poney():
-  def __init__():
+  def __init__(self):
     #coucou
     #je suis une classe
     pass
