@@ -40,7 +40,7 @@ for client in clients:
 
         for client in clients:
             if client[2] != i:
-                client[0].send(msg)
+                client[0].send(b"\n"+msg)
             
     except socket.error:
         sleep(0.1)
