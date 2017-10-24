@@ -21,4 +21,5 @@ def recv():
     pass
 
 def send(message):
+  recv()
   connexion_avec_serveur.send(message)
