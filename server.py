@@ -1,8 +1,11 @@
 import socket
 from time import time, sleep
 
+GRAPHIC_DISPLAY = False
 
-
+def disp(*args):
+    if GRAPHIC_DISPLAY:
+        print(args)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -26,9 +29,11 @@ while time()-t<20.0:
         co,inf = s.accept()
         i = len(clients)
         clients.append((co,inf,i))
-        print("received client",i,":",co,inf)
+        disp("received client",i,":",co,inf)
     except socket.error:
         pass
+
+disp("Discussion is open\n")
         
 
 def receive():
