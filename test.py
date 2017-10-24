@@ -6,10 +6,24 @@ connexion_avec_serveur.connect(('78.223.16.25', 55556))
 #connexion_avec_serveur.send(b"coucou")
 #connexion_avec_serveur.recv(1024)
 
-
-#SAAAAAALUUUT
-
 def coucou(nb):
   print("coucou"*nb)
 
 coucou(4)
+
+def big_one():
+  print("hey di oh")
+
+class Poney():
+  def __init__(self):
+    #coucou
+    #je suis une classe
+    pass
+  
+def max(a,b):
+  if a>=b:
+    return(a)
+  else:
+    return(b)
+
+
