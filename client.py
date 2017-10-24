@@ -15,7 +15,7 @@ print("=============== Bonjour ! ===============")
 def recv():
   try:
     msg = connexion_avec_serveur.recv(1024)
-    print(msg)
+    print(msg.decode())
   except socket.error:
     pass
 
