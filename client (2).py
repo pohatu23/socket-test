@@ -3,12 +3,12 @@ from tkinter import *
 
 #============ conexion serveur =============#
 
-#hote = ""
-#port = 55556
+hote = ""
+port = 55556
 
-#connexion_avec_serveur = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#connexion_avec_serveur.connect((hote, port))
-#connexion_avec_serveur.settimeout(0)
+connexion_avec_serveur = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+connexion_avec_serveur.connect((hote, port))
+connexion_avec_serveur.settimeout(0)
 
 #============ fenetre tkinter =============#
 
@@ -43,11 +43,11 @@ class Interface(Frame):
   def envoyer(self, touche):
 
     message = self.var_texte.get()
-    self.var_texte.set("")
-    print(message)
-    self.afficher(message)
-    connexion_avec_serveur.send(message.encode()) #envoie serveur
-    self.ligne_texte.delete(0, 100)
+    if message != "":
+      self.var_texte.set("")
+      print(message)
+      self.afficher(message)
+      connexion_avec_serveur.send(message.encode()) #envoie serveur
 
   def recevoir(self):
 
