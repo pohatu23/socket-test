@@ -23,6 +23,15 @@ def big_one():
   
   print("hey di oh")
 
-
-
+class Poney():
+  def __init__(self):
+    #coucou
+    #je suis une classe
+    pass
+  
+def max(a,b):
+  if a>=b:
+    return(a)
+  else:
+    return(b)
 
