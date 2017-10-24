@@ -10,3 +10,15 @@ connexion_avec_serveur.connect(('78.223.16.25', 55556))
 SAAAAAALLLLLLUT
 
 COucou
+
+class Poney():
+  def __init__():
+    #coucou
+    #je suis une classe
+    pass
+  
+def max(a,b):
+  if a>=b:
+    return(a)
+  else:
+    return(b)
